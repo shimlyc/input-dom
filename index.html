@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="div1">
+
+        <form>
+
+
+            <input type="text" id="input1" placeholder="type.....">
+
+            <button id="button1">send</button>
+            <div id="div"></div>
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .div1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 100vh;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    .div2 {
+        background-color: beige;
+    }
+
+    .div3 {
+        background-color: beige;
+        padding-top: 100px;
+    }
+    p{
+    color: white;
+    max-width: 300px;
+    background-color: white;
+    color: green;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    border-radius: 3px;
+
+}
+</style>
+<script>
+
+let input = document.getElementById("input1");
+let button = document.getElementById("button1");
+let display = document.getElementById("div");
+
+
+
+let getInputValue = (event)=>{
+
+   
+    event.preventDefault();
+
+    
+    let isValue = input.value;
+
+   
+    console.log(isValue)
+
+
+    
+    createTodo(isValue)
+
+}
+
+
+
+
+button.addEventListener("click", getInputValue)
+
+
+
+let createTodo = (isValue)=>{
+
+   
+    
+    let para = document.createElement("p");
+
+ 
+    para.innerHTML = isValue
+
+  
+    display.appendChild(para);
+}
+</script>
